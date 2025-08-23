@@ -1,0 +1,15 @@
+
+
+# Allow arrays folder
+!arrays/
+
+# Ignore build folders inside arrays (or anywhere else)
+
+
+# Ignore executables and object files inside arrays
+arrays/*.exe
+arrays/*.o
+
+# Ignore misc and vscode folders
+misc/
+.vscode/
