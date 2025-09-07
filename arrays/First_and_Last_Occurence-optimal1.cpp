@@ -2,19 +2,17 @@
 #include<algorithm>
 #include<utility>
 using namespace std;
+
 void name(int arr[], int n, int k) {
 
-    int f = -1, l = -1;
-    for(int i = 0; i<n; i++) {
-        if(arr[i] == k) {
+    pair<int,int> ans;
 
-            if(f == -1) f = i;
-            l = i;
-        }
-    }
+    int f = lower_bound(arr, arr+n, k) - arr;
+    int l = upper_bound(arr, arr+n, k) - arr - 1;
 
-    pair<int, int> ans = {f, l};
+    ans = {f,l};
     cout<<ans.first<<", "<<ans.second<<endl;
+
 
 }
 
@@ -33,7 +31,7 @@ int main() {
     cout<<"Enter target: "<<endl;
     cin>>k;
     
-    cout<<"Index at which lower and upper bound appears is: ";
+    cout<<"Index at which lower-bound appears is: ";
     name(arr, n, k);
 
     system("pause");
