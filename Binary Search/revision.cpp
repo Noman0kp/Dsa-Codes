@@ -3,6 +3,39 @@ using namespace std;
 
 void name(int arr[], int n, int k) {
 
+    int l = 0, h = n-1;
+
+    while(l <= h) {
+        int m = l + (h - l)/2;
+
+        if(arr[m] == k) {
+            cout<<"Yes"<<endl;
+        }
+
+        if(arr[l] == arr[m] && arr[m] == arr[h]) {
+            l++; h--;       
+        }
+
+        if(arr[m] <= arr[h]) {
+            if(arr[m] < k && k <= arr[h]) {
+                l = m+1;
+            }
+            else h = m-1;
+        }
+
+        if(arr[l] <= arr[m]) {
+            if(arr[l] <= k && k < arr[m]) {
+                h = m-1;
+            }
+            else {
+                l = m+1;
+            }
+        }
+
+
+
+    }
+    
 }
 
 

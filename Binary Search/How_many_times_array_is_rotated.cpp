@@ -13,7 +13,7 @@ void name(int arr[], int n) {
             if(arr[l] < mini) {
                 ind = l;
                 break;
-            }
+            } h = m-1;
         }
 
         if(arr[l] <= arr[m]) {
